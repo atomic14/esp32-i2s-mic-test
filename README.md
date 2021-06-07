@@ -18,6 +18,16 @@ I think the most minimal thing we can do is to use the serial plotter in Arduino
 
 Open this sketch up using the Arduino IDE and hit run. Now go to Tools->Serial Plotter.
 
+There's only a few lines of code that you will need to change:
+
+```c++
+#define I2S_MIC_SERIAL_CLOCK GPIO_NUM_26
+#define I2S_MIC_LEFT_RIGHT_CLOCK GPIO_NUM_22
+#define I2S_MIC_SERIAL_DATA GPIO_NUM_21
+```
+
+These should match how you have wired up your microphone.
+
 You should see a waveform that looks like this if you whistle (if you can't whistle - try screaming 😱).
 
 ![Whistling](./images/whistling.png)
