@@ -1,5 +1,7 @@
 # The Simplest Test Code for an I2S Microphone on the ESP32 I can Imagine
 
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/Z8Z734F5Y)
+
 I've got a lot of audio projects. And I've tried to make these all available on GitHub.
 
 You can see all my projects here: [atomic14](https://www.youtube.com/channel/UC4Otk-uDioJN0tg6s1QO9lw) - please take a look and subscribe if you like them!
@@ -26,7 +28,31 @@ There's only a few lines of code that you will need to change:
 #define I2S_MIC_SERIAL_DATA GPIO_NUM_21
 ```
 
-These should match how you have wired up your microphone.
+# Wiring up the INMP441
+
+This is a popular cheap microphone with readily available breakout board
+|INMP441 | ESP32| Info|
+|---|---|---|
+|VDD|3v3|Power - DO NOT USE 5V!|
+|GND|GND|GND|
+|L/R|GND|Left channel or right channel|
+|WS|22|Left right clock|
+|SCK|26|Serial clock|
+|SD|21|Serial data|
+
+# Wiring up the ICS-43434
+
+This is a better microphone (IMHO) with a less popular breakout board that I sell... [Available Here](https://www.tindie.com/products/21519/)
+|ICS43434 | ESP32| Info|
+|---|---|---|
+|VDD|3v3|Power - DO NOT USE 5V!|
+|GND|GND|GND|
+|LR|GND|Left channel or right channel|
+|WS|22|Left right clock|
+|SCK|26|Serial clock|
+|SD|21|Serial data|
+
+Feel free to change the pins - but make sure you adjust the code to match.
 
 You should see a waveform that looks like this if you whistle (if you can't whistle - try screaming 😱).
 
